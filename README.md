@@ -8,7 +8,7 @@ https://tryhackme.com/room/adana
 1. First make sure you are connected to THM vpn and deploy the machine 
 
 2. Enumeration
-	" nmap -A -p- <ip> " shows that there's two open ports ftp and http 
+	(nmap -A -p- <ip>) shows that there's two open ports ftp and http 
 
 	![alttext](nmap.png)
 
