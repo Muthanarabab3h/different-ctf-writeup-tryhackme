@@ -35,7 +35,7 @@ https://tryhackme.com/room/adana
   
 4. getting iniitial access
 	so there's no point of getting into that wordpress. so i wanted to know where to find that backup so i ran ffuf to enumerate subdomains 
-	( ffuf -u adana.thm -w /usr/share/wordlists/seclists/Discovery/DNS/subdomains-top1million-110000.txt -H "Host: FUZZ.adana.thm" ) and this did reveal a couple of subdomains but one of them is the backup indeed
+	( ffuf -u adana.thm -w /usr/share/wordlists/seclists/Discovery/DNS/subdomains-top1million-110000.txt -H "Host: FUZZ.adana.thm" ) and this did reveal a couple of subdomains but one of them is the backup indeed. there's also another way to find the subdomain by lookin in " wp-post "
 	so i thought maybe i can upload a reverse shell through ftp and then run it from the browser and that's what i did but there's one thing left to do and it's to make the shell executable by running "chmod 777 shell.php" inside the ftp now i opened my listener "nc -lnvp <port>" and visited that website "<the subdomain you found>/adana.thm/shell.php" and i did get a reverse shell
 
 5. escalating from www-data 
@@ -52,7 +52,7 @@ now looking at the 2 passwords we found earlier you notice that they start with 
 
   	there's one called /usr/bin/binary that's interisting. let's see what it does "ltrace /usr/bin/binary" 
 
-	![alttext](ltrace.xcf)
+	![alttext](ltrace.png)
 
 	it's asking for a string so i entered the first one from the options "warzone" then the function strcmp compares my string with "warzoneinadana" so that's the right string that we need to choose but i got kicked from the user hakanbey ( that's why i told you to keep note of the password ) so we login again and re-run the binary entering the correct string this time we get this output
 
