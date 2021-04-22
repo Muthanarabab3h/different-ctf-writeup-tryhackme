@@ -56,7 +56,7 @@ now looking at the 2 passwords we found earlier you notice that they start with 
 
 	it's asking for a string so i entered the first one from the options "warzone" then the function strcmp compares my string with "warzoneinadana" so that's the right string that we need to choose but i got kicked from the user hakanbey ( that's why i told you to keep note of the password ) so we login again and re-run the binary entering the correct string this time we get this output
 
-	![alttext](ltrace2.xcf)
+	![alttext](ltrace2.png)
 
 there's a hint saying "Hexeditor 00000020" so we need to run hexeditor and to look at line 00000020 we copy the hex line then decode ( from hex and then to base85 )it and we got the root pass just type "su root" and walaa
 
