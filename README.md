@@ -46,15 +46,15 @@ it's owned by root and members of the group hakanbey can execute it so we need t
 now looking at the 2 passwords we found earlier you notice that they start with the same prefix so that might be a pattern that hakanbey uses for his passwords so i prepended that word to every word in the wordlist.txt using this command "awk '{print "<the prefix>" $0}' wordlist.txt > list.txt " now the wordlist is perfect running sucrack again with the wordlist " list.txt " will work indeed and give you the password of the user (take note of his password cause we might re-use it later ) 
 
 6. getting root 
-  now i know i can run the find command, looking for SUIDs again 
+  	now i know i can run the find command, looking for SUIDs again 
 
 	![alttext](suid.png)
 
-  there's one called /usr/bin/binary that's interisting. let's see what it does "ltrace /usr/bin/binary" 
+  	there's one called /usr/bin/binary that's interisting. let's see what it does "ltrace /usr/bin/binary" 
 
 	![alttext](ltrace.xcf)
 
-it's asking for a string so i entered the first one from the options "warzone" then the function strcmp compares my string with "warzoneinadana" so that's the right string that we need to choose but i got kicked from the user hakanbey ( that's why i told you to keep note of the password ) so we login again and re-run the binary entering the correct string this time we get this output
+	it's asking for a string so i entered the first one from the options "warzone" then the function strcmp compares my string with "warzoneinadana" so that's the right string that we need to choose but i got kicked from the user hakanbey ( that's why i told you to keep note of the password ) so we login again and re-run the binary entering the correct string this time we get this output
 
 	![alttext](ltrace2.xcf)
 
