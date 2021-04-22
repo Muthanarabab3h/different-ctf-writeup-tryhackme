@@ -58,7 +58,7 @@ now looking at the 2 passwords we found earlier you notice that they start with 
 
 	![alttext](ltrace2.png)
 
-there's a hint saying "Hexeditor 00000020" so we need to run hexeditor and to look at line 00000020 we copy the hex line then decode ( from hex and then to base85 )it and we got the root pass just type "su root" and walaa
+there's a hint saying "Hexeditor 00000020" so we need to download that picture then run hexeditor and to look at line 00000020 we copy the hex line then decode it ( from hex and then to base85 ) and we got the root pass just type "su root" and walaa
 
 
 	written by yanal abuseini
